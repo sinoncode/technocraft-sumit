@@ -49,6 +49,32 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/apps_web_1anvha4._.js",
       "static/chunks/turbopack-apps_web_08bm286._.js",
       "static/chunks/apps_web_0fd5yn3._.js"
+    ],
+    "/solutions/ai-data-centre/page": [
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_1di75ot._.js",
+      "static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jm.js",
+      "static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+      "static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+      "static/chunks/node_modules_next_dist_compiled_1amofcm._.js",
+      "static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+      "static/chunks/node_modules_next_dist_1e8vcs8._.js",
+      "static/chunks/node_modules_@swc_helpers_cjs_1r9vbqw._.js",
+      "static/chunks/apps_web_1anvha4._.js",
+      "static/chunks/turbopack-apps_web_08bm286._.js",
+      "static/chunks/apps_web_1r3axda._.js"
+    ],
+    "/solutions/cybersecurity/page": [
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_1di75ot._.js",
+      "static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jm.js",
+      "static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js",
+      "static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-6._.js",
+      "static/chunks/node_modules_next_dist_compiled_1amofcm._.js",
+      "static/chunks/node_modules_next_dist_client_0_90u2t._.js",
+      "static/chunks/node_modules_next_dist_1e8vcs8._.js",
+      "static/chunks/node_modules_@swc_helpers_cjs_1r9vbqw._.js",
+      "static/chunks/apps_web_1anvha4._.js",
+      "static/chunks/turbopack-apps_web_08bm286._.js",
+      "static/chunks/apps_web_1lmli6r._.js"
     ]
   },
   "pagesChunkGroupBootstrapParams": {},
