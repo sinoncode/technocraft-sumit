@@ -181,7 +181,7 @@ export function SiteHeader() {
 									<BrandLogo compact asSpan />
 								</SheetTitle>
 							</SheetHeader>
-							<nav className="flex flex-col overflow-y-auto p-5" aria-label="Mobile">
+							<nav className="flex flex-col overflow-y-auto p-5 overflow-scroll h-[80vh]" aria-label="Mobile">
 								<p className="font-mono-tech text-xs font-medium uppercase tracking-[0.18em] text-cyan-bright/80">
 									Solutions
 								</p>
@@ -218,7 +218,7 @@ export function SiteHeader() {
 										setSheetOpen(false);
 										inquiry.open('general');
 									}}
-									className="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-ultramarine px-5 font-display text-sm font-semibold text-primary-foreground shadow-soft-primary"
+									className="mt-6 py-4 inline-flex h-20  items-center justify-center rounded-full bg-ultramarine px-5 font-display text-sm font-semibold text-primary-foreground shadow-soft-primary"
 								>
 									Get in Touch
 								</button>

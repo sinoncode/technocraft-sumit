@@ -2,5 +2,7 @@
   "/page": "app/page.js",
   "/solutions/ai-data-centre/page": "app/solutions/ai-data-centre/page.js",
   "/solutions/cybersecurity/page": "app/solutions/cybersecurity/page.js",
+  "/solutions/it-staffing/page": "app/solutions/it-staffing/page.js",
+  "/solutions/page": "app/solutions/page.js",
   "/solutions/telecom/page": "app/solutions/telecom/page.js"
 }

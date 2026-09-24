@@ -660,16 +660,20 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 __turbopack_context__.s([
     "SiteFooter",
-    ()=>SiteFooter
+    ()=>SiteFooter,
+    "default",
+    ()=>TypingText
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$data$2f$pillars$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/web/src/data/pillars.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$components$2f$inquiry$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/web/src/components/inquiry-dialog.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$components$2f$brand$2d$logo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/web/src/components/brand-logo.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 ;
-var _s = __turbopack_context__.k.signature();
+var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -700,8 +704,83 @@ const COMPANY_LINKS = [
         to: '/contact'
     }
 ];
-function SiteFooter() {
+function TypingText({ text, typingSpeed = 90, deletingSpeed = 45, pauseAfterTyping = 2200, pauseAfterDeleting = 700, startDelay = 500, className = "" }) {
     _s();
+    const [displayedText, setDisplayedText] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [phase, setPhase] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("typing");
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "TypingText.useEffect": ()=>{
+            let timeout;
+            if (phase === "typing") {
+                if (displayedText.length < text.length) {
+                    const variation = Math.random() * 30 - 15;
+                    const delay = Math.max(45, typingSpeed + variation);
+                    timeout = setTimeout({
+                        "TypingText.useEffect": ()=>{
+                            setDisplayedText(text.slice(0, displayedText.length + 1));
+                        }
+                    }["TypingText.useEffect"], delay);
+                } else {
+                    timeout = setTimeout({
+                        "TypingText.useEffect": ()=>{
+                            setPhase("deleting");
+                        }
+                    }["TypingText.useEffect"], pauseAfterTyping);
+                }
+            }
+            if (phase === "deleting") {
+                if (displayedText.length > 0) {
+                    const variation = Math.random() * 15 - 7;
+                    const delay = Math.max(25, deletingSpeed + variation);
+                    timeout = setTimeout({
+                        "TypingText.useEffect": ()=>{
+                            setDisplayedText(displayedText.slice(0, -1));
+                        }
+                    }["TypingText.useEffect"], delay);
+                } else {
+                    timeout = setTimeout({
+                        "TypingText.useEffect": ()=>{
+                            setPhase("typing");
+                        }
+                    }["TypingText.useEffect"], pauseAfterDeleting);
+                }
+            }
+            return ({
+                "TypingText.useEffect": ()=>clearTimeout(timeout)
+            })["TypingText.useEffect"];
+        }
+    }["TypingText.useEffect"], [
+        displayedText,
+        phase,
+        text,
+        typingSpeed,
+        deletingSpeed,
+        pauseAfterTyping,
+        pauseAfterDeleting
+    ]);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+        className: className,
+        children: [
+            displayedText,
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                "aria-hidden": "true",
+                className: "ml-1 inline-block h-[1em] w-[2px] translate-y-[2px] animate-pulse bg-cyan-bright"
+            }, void 0, false, {
+                fileName: "[project]/apps/web/src/components/site-footer.tsx",
+                lineNumber: 88,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/apps/web/src/components/site-footer.tsx",
+        lineNumber: 86,
+        columnNumber: 5
+    }, this);
+}
+_s(TypingText, "pwHdkYp/GWVL8wxqTgNBU9gLSMU=");
+_c = TypingText;
+function SiteFooter() {
+    _s1();
     const inquiry = (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$components$2f$inquiry$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useInquiry"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
         className: "bg-mesh-ink relative overflow-hidden border-t border-cream/10 text-cream",
@@ -711,7 +790,7 @@ function SiteFooter() {
                 "aria-hidden": true
             }, void 0, false, {
                 fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                lineNumber: 21,
+                lineNumber: 100,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -719,7 +798,7 @@ function SiteFooter() {
                 "aria-hidden": true
             }, void 0, false, {
                 fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                lineNumber: 22,
+                lineNumber: 101,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -732,7 +811,7 @@ function SiteFooter() {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$components$2f$brand$2d$logo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BrandLogo"], {}, void 0, false, {
                                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                        lineNumber: 29,
+                                        lineNumber: 108,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -740,29 +819,67 @@ function SiteFooter() {
                                         children: "Telecommunications infrastructure, AI data-centre capability, cybersecurity, AI applications and specialised technology talent — five connected practices, one accountable partner."
                                     }, void 0, false, {
                                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                        lineNumber: 30,
+                                        lineNumber: 109,
                                         columnNumber: 7
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "mt-4 font-mono-tech text-[11px] uppercase tracking-[0.2em] text-cyan-bright/75",
-                                        children: "Engineering Digital Success"
-                                    }, void 0, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                        className: "mt-4 space-y-2.5 text-sm",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                    href: "tel:+17328061984",
+                                                    className: "text-cream/80 underline-offset-4 transition-colors hover:text-cyan-bright hover:underline",
+                                                    children: "(405)469 676 6531"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/apps/web/src/components/site-footer.tsx",
+                                                    lineNumber: 119,
+                                                    columnNumber: 9
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/web/src/components/site-footer.tsx",
+                                                lineNumber: 118,
+                                                columnNumber: 8
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                    href: "tel:+14696766531",
+                                                    className: "text-cream/80 underline-offset-4 transition-colors hover:text-cyan-bright hover:underline",
+                                                    children: "+1-732-806-1984"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/apps/web/src/components/site-footer.tsx",
+                                                    lineNumber: 127,
+                                                    columnNumber: 9
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/web/src/components/site-footer.tsx",
+                                                lineNumber: 126,
+                                                columnNumber: 8
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                    href: "mailto:sales@technokraftserve.com",
+                                                    className: "text-cream/80 underline-offset-4 transition-colors hover:text-cyan-bright hover:underline",
+                                                    children: "sales@technokraftserve.com"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/apps/web/src/components/site-footer.tsx",
+                                                    lineNumber: 135,
+                                                    columnNumber: 9
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/apps/web/src/components/site-footer.tsx",
+                                                lineNumber: 134,
+                                                columnNumber: 8
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                        lineNumber: 35,
-                                        columnNumber: 7
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "mt-2 font-mono-tech text-[11px] uppercase tracking-[0.18em] text-cream/45",
-                                        children: "Connect · Compute · Secure · Intelligence · Operate"
-                                    }, void 0, false, {
-                                        fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                        lineNumber: 38,
+                                        lineNumber: 116,
                                         columnNumber: 7
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                lineNumber: 28,
+                                lineNumber: 107,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -773,7 +890,7 @@ function SiteFooter() {
                                         children: "Solutions"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                        lineNumber: 43,
+                                        lineNumber: 147,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -786,12 +903,12 @@ function SiteFooter() {
                                                         children: pillar.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                        lineNumber: 49,
+                                                        lineNumber: 153,
                                                         columnNumber: 10
                                                     }, this)
                                                 }, pillar.slug, false, {
                                                     fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                    lineNumber: 48,
+                                                    lineNumber: 152,
                                                     columnNumber: 9
                                                 }, this)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -801,24 +918,24 @@ function SiteFooter() {
                                                     children: "All solutions"
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                    lineNumber: 58,
+                                                    lineNumber: 162,
                                                     columnNumber: 9
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                lineNumber: 57,
+                                                lineNumber: 161,
                                                 columnNumber: 8
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                        lineNumber: 46,
+                                        lineNumber: 150,
                                         columnNumber: 7
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                lineNumber: 42,
+                                lineNumber: 146,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -829,108 +946,68 @@ function SiteFooter() {
                                         children: "Company"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                        lineNumber: 68,
+                                        lineNumber: 172,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
                                         className: "mt-4 space-y-2.5 text-sm",
-                                        children: [
-                                            COMPANY_LINKS.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                        href: link.to,
-                                                        className: "text-cream/80 underline-offset-4 transition-colors hover:text-cyan-bright hover:underline",
-                                                        children: link.label
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                        lineNumber: 74,
-                                                        columnNumber: 10
-                                                    }, this)
-                                                }, link.to, false, {
-                                                    fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                    lineNumber: 73,
-                                                    columnNumber: 9
-                                                }, this)),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "tel:+17328061984",
+                                        children: COMPANY_LINKS.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                    href: link.to,
                                                     className: "text-cream/80 underline-offset-4 transition-colors hover:text-cyan-bright hover:underline",
-                                                    children: "+1 (732) 806-1984"
+                                                    children: link.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                    lineNumber: 83,
-                                                    columnNumber: 9
+                                                    lineNumber: 178,
+                                                    columnNumber: 10
                                                 }, this)
-                                            }, void 0, false, {
+                                            }, link.to, false, {
                                                 fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                lineNumber: 82,
-                                                columnNumber: 8
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "tel:+14696766531",
-                                                    className: "text-cream/80 underline-offset-4 transition-colors hover:text-cyan-bright hover:underline",
-                                                    children: "+1 (469) 676-6531 ext. 405"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                    lineNumber: 91,
-                                                    columnNumber: 9
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                lineNumber: 90,
-                                                columnNumber: 8
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                    href: "mailto:sales@technokraftserve.com",
-                                                    className: "text-cream/80 underline-offset-4 transition-colors hover:text-cyan-bright hover:underline",
-                                                    children: "sales@technokraftserve.com"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                    lineNumber: 99,
-                                                    columnNumber: 9
-                                                }, this)
-                                            }, void 0, false, {
-                                                fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                lineNumber: 98,
-                                                columnNumber: 8
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                                className: "pt-1 text-cream/55",
-                                                children: [
-                                                    "1303 W. Suite 130, Walnut Hill",
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
-                                                        fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                        lineNumber: 108,
-                                                        columnNumber: 9
-                                                    }, this),
-                                                    "Irving, TX 75038"
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                                lineNumber: 106,
-                                                columnNumber: 8
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
+                                                lineNumber: 177,
+                                                columnNumber: 9
+                                            }, this))
+                                    }, void 0, false, {
                                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                        lineNumber: 71,
+                                        lineNumber: 175,
                                         columnNumber: 7
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                lineNumber: 67,
+                                lineNumber: 171,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "font-mono-tech text-xs font-medium uppercase tracking-[0.18em] text-cream/50",
-                                        children: "Start a conversation"
+                                        children: "Address"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                        lineNumber: 114,
+                                        lineNumber: 190,
+                                        columnNumber: 7
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                        className: "mt-4 space-y-2.5 text-sm",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            className: "pt-1  text-cyan-bright/75 font-semibold",
+                                            children: [
+                                                "1303 W. Suite Number: 130, Walnut Hill, ",
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                                                    fileName: "[project]/apps/web/src/components/site-footer.tsx",
+                                                    lineNumber: 196,
+                                                    columnNumber: 49
+                                                }, this),
+                                                "Irving TX 75038"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/apps/web/src/components/site-footer.tsx",
+                                            lineNumber: 195,
+                                            columnNumber: 8
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/web/src/components/site-footer.tsx",
+                                        lineNumber: 193,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -938,7 +1015,7 @@ function SiteFooter() {
                                         children: "Have a complex technology requirement? The first conversation is with someone who works in that discipline."
                                     }, void 0, false, {
                                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                        lineNumber: 117,
+                                        lineNumber: 199,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -948,19 +1025,39 @@ function SiteFooter() {
                                         children: "Book a Consultation"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                        lineNumber: 121,
+                                        lineNumber: 203,
                                         columnNumber: 7
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                lineNumber: 113,
+                                lineNumber: 189,
                                 columnNumber: 6
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                        lineNumber: 27,
+                        lineNumber: 106,
+                        columnNumber: 5
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-12 flex flex-col gap-3  pt-6 text-xs text-cream/45 sm:flex-row sm:items-center sm:justify-center",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(TypingText, {
+                            text: "Engineering Digital Success! Connect · Compute · Secure · Intelligence · Operate",
+                            typingSpeed: 95,
+                            deletingSpeed: 40,
+                            pauseAfterTyping: 2500,
+                            pauseAfterDeleting: 700,
+                            startDelay: 600,
+                            className: "mt-4 font-mono-tech text-[13px] uppercase tracking-[0.18em] font-semibold text-cyan-bright/75"
+                        }, void 0, false, {
+                            fileName: "[project]/apps/web/src/components/site-footer.tsx",
+                            lineNumber: 214,
+                            columnNumber: 4
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/apps/web/src/components/site-footer.tsx",
+                        lineNumber: 213,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -973,7 +1070,7 @@ function SiteFooter() {
                                         children: "© 2026 TechnoKraft Consultancy Services LLC. All rights reserved."
                                     }, void 0, false, {
                                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                        lineNumber: 132,
+                                        lineNumber: 226,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -982,13 +1079,13 @@ function SiteFooter() {
                                         children: "Content planning"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                        lineNumber: 133,
+                                        lineNumber: 227,
                                         columnNumber: 7
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                lineNumber: 131,
+                                lineNumber: 225,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -996,36 +1093,37 @@ function SiteFooter() {
                                 children: "Building the networks and systems that connect tomorrow."
                             }, void 0, false, {
                                 fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                                lineNumber: 140,
+                                lineNumber: 234,
                                 columnNumber: 6
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                        lineNumber: 130,
+                        lineNumber: 224,
                         columnNumber: 5
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/web/src/components/site-footer.tsx",
-                lineNumber: 26,
+                lineNumber: 105,
                 columnNumber: 4
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/apps/web/src/components/site-footer.tsx",
-        lineNumber: 20,
+        lineNumber: 99,
         columnNumber: 3
     }, this);
 }
-_s(SiteFooter, "eK0AOloQGUCZyEjFumNwy/2wh6E=", false, function() {
+_s1(SiteFooter, "eK0AOloQGUCZyEjFumNwy/2wh6E=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$components$2f$inquiry$2d$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useInquiry"]
     ];
 });
-_c = SiteFooter;
-var _c;
-__turbopack_context__.k.register(_c, "SiteFooter");
+_c1 = SiteFooter;
+var _c, _c1;
+__turbopack_context__.k.register(_c, "TypingText");
+__turbopack_context__.k.register(_c1, "SiteFooter");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -1351,7 +1449,7 @@ function SiteHeader() {
                                                 columnNumber: 8
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-                                                className: "flex flex-col overflow-y-auto p-5",
+                                                className: "flex flex-col overflow-y-auto p-5 overflow-scroll h-[80vh]",
                                                 "aria-label": "Mobile",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1440,7 +1538,7 @@ function SiteHeader() {
                                                             setSheetOpen(false);
                                                             inquiry.open('general');
                                                         },
-                                                        className: "mt-6 inline-flex h-11 items-center justify-center rounded-full bg-ultramarine px-5 font-display text-sm font-semibold text-primary-foreground shadow-soft-primary",
+                                                        className: "mt-6 py-4 inline-flex h-20  items-center justify-center rounded-full bg-ultramarine px-5 font-display text-sm font-semibold text-primary-foreground shadow-soft-primary",
                                                         children: "Get in Touch"
                                                     }, void 0, false, {
                                                         fileName: "[project]/apps/web/src/components/site-header.tsx",
@@ -1620,87 +1718,117 @@ function MegaMenu({ open, activeKey, onActiveChange, onClose }) {
                 className: "grid grid-cols-1 lg:grid-cols-[1.05fr_1fr]",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "border-b border-cream/10 p-3 lg:border-b-0 lg:border-r",
+                        className: "\n		relative overflow-hidden\n		border-b border-white/[0.08]\n		bg-white/[0.035]\n		p-3\n		shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_20px_60px_rgba(0,0,0,0.25)]\n		backdrop-blur-2xl\n		backdrop-saturate-150\n		lg:border-b-0\n		lg:border-r\n	",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "px-3 pb-2 pt-1 font-mono-tech text-[11px] font-medium uppercase tracking-[0.18em] text-cyan-bright/80",
-                                children: "Company"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "\n			pointer-events-none\n			absolute -left-20 -top-20\n			h-40 w-40\n			rounded-full\n			bg-cyan-bright/[0.08]\n			blur-3xl\n		"
                             }, void 0, false, {
                                 fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                lineNumber: 105,
-                                columnNumber: 7
+                                lineNumber: 118,
+                                columnNumber: 2
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1",
-                                children: MEGA_ITEMS.map((item)=>{
-                                    const isActive = item.key === activeKey;
-                                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            href: item.to,
-                                            onMouseEnter: ()=>onActiveChange(item.key),
-                                            onFocus: ()=>onActiveChange(item.key),
-                                            onClick: onClose,
-                                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])('group relative flex items-start gap-3 rounded-2xl px-3 py-3 transition-colors', isActive ? 'bg-ultramarine/12' : 'hover:bg-ultramarine/8'),
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])('mt-1 h-9 w-1 shrink-0 rounded-full transition-all duration-300', isActive ? 'bg-gradient-to-b from-cyan-bright to-ultramarine shadow-glow-cyan' : 'bg-cream/15'),
-                                                    "aria-hidden": true
-                                                }, void 0, false, {
-                                                    fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                                    lineNumber: 123,
-                                                    columnNumber: 12
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "min-w-0",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "\n			pointer-events-none\n			absolute -bottom-24 -right-20\n			h-48 w-48\n			rounded-full\n			bg-ultramarine/[0.10]\n			blur-3xl\n		"
+                            }, void 0, false, {
+                                fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
+                                lineNumber: 129,
+                                columnNumber: 2
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "relative z-10",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "px-3 pb-2 pt-1 font-mono-tech text-[11px] font-medium uppercase tracking-[0.18em] text-cyan-bright/80",
+                                        children: "Company"
+                                    }, void 0, false, {
+                                        fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
+                                        lineNumber: 142,
+                                        columnNumber: 3
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                                        className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1",
+                                        children: MEGA_ITEMS.map((item)=>{
+                                            const isActive = item.key === activeKey;
+                                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                    href: item.to,
+                                                    onMouseEnter: ()=>onActiveChange(item.key),
+                                                    onFocus: ()=>onActiveChange(item.key),
+                                                    onClick: onClose,
+                                                    className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])('group relative flex items-start gap-3 rounded-2xl px-3 py-3', 'border border-transparent', 'transition-all duration-300 ease-out', isActive ? [
+                                                        'border-cyan-bright/[0.10]',
+                                                        'bg-white/[0.055]',
+                                                        'shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_8px_30px_rgba(0,0,0,0.18)]'
+                                                    ] : [
+                                                        'hover:border-white/[0.06]',
+                                                        'hover:bg-white/[0.025]'
+                                                    ]),
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])('flex items-center gap-1.5 font-display text-base font-semibold transition-colors', isActive ? 'text-cyan-bright' : 'text-cream group-hover:text-white'),
+                                                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])('mt-1 h-9 w-1 shrink-0 rounded-full', 'transition-all duration-300', isActive ? 'bg-gradient-to-b from-cyan-bright to-ultramarine shadow-glow-cyan' : 'bg-white/[0.12] group-hover:bg-white/[0.25]'),
+                                                            "aria-hidden": true
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
+                                                            lineNumber: 174,
+                                                            columnNumber: 8
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "min-w-0",
                                                             children: [
-                                                                item.label,
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {
-                                                                    className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])('h-3.5 w-3.5 transition-all duration-300', isActive ? 'text-cyan-bright opacity-100' : 'text-cream/40 opacity-0 group-hover:opacity-100'),
-                                                                    "aria-hidden": true
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])('flex items-center gap-1.5 font-display text-base font-semibold', 'transition-colors duration-300', isActive ? 'text-cyan-bright' : 'text-cream group-hover:text-white'),
+                                                                    children: [
+                                                                        item.label,
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$up$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowUpRight$3e$__["ArrowUpRight"], {
+                                                                            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$web$2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])('h-3.5 w-3.5', 'transition-all duration-300', isActive ? 'translate-x-0 text-cyan-bright opacity-100' : '-translate-x-1 text-cream/40 opacity-0 group-hover:translate-x-0 group-hover:opacity-100'),
+                                                                            "aria-hidden": true
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
+                                                                            lineNumber: 197,
+                                                                            columnNumber: 10
+                                                                        }, this)
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
+                                                                    lineNumber: 186,
+                                                                    columnNumber: 9
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                    className: "mt-0.5 block text-sm leading-snug text-cream/55 transition-colors duration-300 group-hover:text-cream/70",
+                                                                    children: item.blurb
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                                                    lineNumber: 140,
-                                                                    columnNumber: 14
+                                                                    lineNumber: 209,
+                                                                    columnNumber: 9
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                                            lineNumber: 133,
-                                                            columnNumber: 13
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                            className: "mt-0.5 block text-sm leading-snug text-cream/55",
-                                                            children: item.blurb
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                                            lineNumber: 150,
-                                                            columnNumber: 13
+                                                            lineNumber: 185,
+                                                            columnNumber: 8
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                                    lineNumber: 132,
-                                                    columnNumber: 12
+                                                    lineNumber: 152,
+                                                    columnNumber: 7
                                                 }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                            lineNumber: 113,
-                                            columnNumber: 11
-                                        }, this)
-                                    }, item.key, false, {
+                                            }, item.key, false, {
+                                                fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
+                                                lineNumber: 151,
+                                                columnNumber: 6
+                                            }, this);
+                                        })
+                                    }, void 0, false, {
                                         fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                        lineNumber: 112,
-                                        columnNumber: 10
-                                    }, this);
-                                })
-                            }, void 0, false, {
+                                        lineNumber: 146,
+                                        columnNumber: 3
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                lineNumber: 108,
-                                columnNumber: 7
+                                lineNumber: 141,
+                                columnNumber: 2
                             }, this)
                         ]
                     }, void 0, true, {
@@ -1716,7 +1844,7 @@ function MegaMenu({ open, activeKey, onActiveChange, onClose }) {
                                 "aria-hidden": true
                             }, void 0, false, {
                                 fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                lineNumber: 163,
+                                lineNumber: 223,
                                 columnNumber: 7
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1726,7 +1854,7 @@ function MegaMenu({ open, activeKey, onActiveChange, onClose }) {
                                         active: activeKey
                                     }, void 0, false, {
                                         fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                        lineNumber: 165,
+                                        lineNumber: 225,
                                         columnNumber: 8
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1737,7 +1865,7 @@ function MegaMenu({ open, activeKey, onActiveChange, onClose }) {
                                                 children: "TechnoKraft · Engineering Digital Success"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                                lineNumber: 167,
+                                                lineNumber: 227,
                                                 columnNumber: 9
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1745,25 +1873,25 @@ function MegaMenu({ open, activeKey, onActiveChange, onClose }) {
                                                 children: activeKey.replace('-', ' ')
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                                lineNumber: 170,
+                                                lineNumber: 230,
                                                 columnNumber: 9
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                        lineNumber: 166,
+                                        lineNumber: 226,
                                         columnNumber: 8
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                                lineNumber: 164,
+                                lineNumber: 224,
                                 columnNumber: 7
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/web/src/components/site-header/mega-menu.tsx",
-                        lineNumber: 162,
+                        lineNumber: 222,
                         columnNumber: 6
                     }, this)
                 ]

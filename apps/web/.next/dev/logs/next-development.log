@@ -3,3 +3,46 @@
 {"timestamp":"00:00:16.120","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
 {"timestamp":"00:01:09.280","source":"Browser","level":"WARN","message":"Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior"}
 {"timestamp":"00:01:09.369","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mDetected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\\\"smooth\\\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior\\u001b[39m\""}
+{"timestamp":"00:50:09.914","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"01:21:38.719","source":"Server","level":"LOG","message":"✓ Compiled in 773ms"}
+{"timestamp":"01:21:56.622","source":"Server","level":"LOG","message":"✓ Compiled in 413ms"}
+{"timestamp":"01:22:50.427","source":"Server","level":"LOG","message":"✓ Compiled in 377ms"}
+{"timestamp":"01:23:13.707","source":"Server","level":"LOG","message":"✓ Compiled in 379ms"}
+{"timestamp":"01:23:23.591","source":"Server","level":"LOG","message":"✓ Compiled in 338ms"}
+{"timestamp":"01:23:59.125","source":"Server","level":"LOG","message":"✓ Compiled in 386ms"}
+{"timestamp":"01:24:27.189","source":"Server","level":"LOG","message":"✓ Compiled in 339ms"}
+{"timestamp":"01:24:49.738","source":"Server","level":"LOG","message":"✓ Compiled in 368ms"}
+{"timestamp":"01:25:35.574","source":"Server","level":"LOG","message":"✓ Compiled in 381ms"}
+{"timestamp":"01:25:42.895","source":"Server","level":"LOG","message":"✓ Compiled in 348ms"}
+{"timestamp":"01:26:05.584","source":"Server","level":"LOG","message":"✓ Compiled in 439ms"}
+{"timestamp":"01:26:42.394","source":"Server","level":"LOG","message":"✓ Compiled in 398ms"}
+{"timestamp":"01:27:01.753","source":"Server","level":"LOG","message":"✓ Compiled in 480ms"}
+{"timestamp":"01:27:15.340","source":"Server","level":"LOG","message":"✓ Compiled in 387ms"}
+{"timestamp":"01:27:30.373","source":"Server","level":"LOG","message":"✓ Compiled in 337ms"}
+{"timestamp":"01:27:34.340","source":"Server","level":"LOG","message":"✓ Compiled in 329ms"}
+{"timestamp":"01:27:46.408","source":"Server","level":"LOG","message":"✓ Compiled in 398ms"}
+{"timestamp":"01:28:01.075","source":"Server","level":"LOG","message":"✓ Compiled in 438ms"}
+{"timestamp":"01:28:17.460","source":"Server","level":"LOG","message":"✓ Compiled in 359ms"}
+{"timestamp":"01:28:27.555","source":"Server","level":"LOG","message":"✓ Compiled in 368ms"}
+{"timestamp":"01:30:02.886","source":"Server","level":"LOG","message":"✓ Compiled in 328ms"}
+{"timestamp":"01:30:12.409","source":"Server","level":"WARN","message":"⚠ Fast Refresh had to perform a full reload when ./apps/web/src/components/site-footer.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload"}
+{"timestamp":"01:30:12.438","source":"Server","level":"LOG","message":"✓ Compiled in 545ms"}
+{"timestamp":"01:30:12.939","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"01:30:27.357","source":"Server","level":"LOG","message":"✓ Compiled in 349ms"}
+{"timestamp":"01:30:57.617","source":"Server","level":"LOG","message":"✓ Compiled in 416ms"}
+{"timestamp":"01:31:05.931","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"01:31:49.303","source":"Server","level":"LOG","message":"✓ Compiled in 366ms"}
+{"timestamp":"01:32:03.988","source":"Server","level":"LOG","message":"✓ Compiled in 417ms"}
+{"timestamp":"01:59:33.106","source":"Browser","level":"WARN","message":"Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior"}
+{"timestamp":"01:59:33.118","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mDetected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\\\"smooth\\\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior\\u001b[39m\""}
+{"timestamp":"02:00:23.355","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"02:01:10.304","source":"Server","level":"LOG","message":"✓ Compiled in 482ms"}
+{"timestamp":"02:01:21.720","source":"Server","level":"LOG","message":"✓ Compiled in 330ms"}
+{"timestamp":"02:04:09.692","source":"Server","level":"LOG","message":"✓ Compiled in 259ms"}
+{"timestamp":"02:05:25.806","source":"Server","level":"LOG","message":"✓ Compiled in 261ms"}
+{"timestamp":"02:12:39.031","source":"Server","level":"LOG","message":"✓ Compiled in 244ms"}
+{"timestamp":"02:20:41.307","source":"Server","level":"LOG","message":"✓ Compiled in 224ms"}
+{"timestamp":"02:22:17.661","source":"Browser","level":"WARN","message":"Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\"smooth\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior"}
+{"timestamp":"02:22:17.663","source":"Server","level":"WARN","message":"[browser] \"\\u001b[33mDetected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior=\\\"smooth\\\"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior\\u001b[39m\""}
+{"timestamp":"02:25:07.523","source":"Server","level":"LOG","message":"✓ Compiled in 234ms"}
+{"timestamp":"02:25:16.210","source":"Server","level":"LOG","message":"✓ Compiled in 206ms"}

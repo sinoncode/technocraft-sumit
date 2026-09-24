@@ -101,62 +101,122 @@ export function MegaMenu({ open, activeKey, onActiveChange, onClose }: MegaMenuP
 			>
 				<div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr]">
 					{/* Left rail */}
-					<div className="border-b border-cream/10 p-3 lg:border-b-0 lg:border-r">
-						<p className="px-3 pb-2 pt-1 font-mono-tech text-[11px] font-medium uppercase tracking-[0.18em] text-cyan-bright/80">
-							Company
-						</p>
-						<ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
-							{MEGA_ITEMS.map(item => {
-								const isActive = item.key === activeKey;
-								return (
-									<li key={item.key}>
-										<Link
-											href={item.to}
-											onMouseEnter={() => onActiveChange(item.key)}
-											onFocus={() => onActiveChange(item.key)}
-											onClick={onClose}
-											className={cn(
-												'group relative flex items-start gap-3 rounded-2xl px-3 py-3 transition-colors',
-												isActive ? 'bg-ultramarine/12' : 'hover:bg-ultramarine/8',
-											)}
-										>
-											<span
-												className={cn(
-													'mt-1 h-9 w-1 shrink-0 rounded-full transition-all duration-300',
-													isActive
-														? 'bg-gradient-to-b from-cyan-bright to-ultramarine shadow-glow-cyan'
-														: 'bg-cream/15',
-												)}
-												aria-hidden
-											/>
-											<span className="min-w-0">
-												<span
-													className={cn(
-														'flex items-center gap-1.5 font-display text-base font-semibold transition-colors',
-														isActive ? 'text-cyan-bright' : 'text-cream group-hover:text-white',
-													)}
-												>
-													{item.label}
-													<ArrowUpRight
-														className={cn(
-															'h-3.5 w-3.5 transition-all duration-300',
-															isActive
-																? 'text-cyan-bright opacity-100'
-																: 'text-cream/40 opacity-0 group-hover:opacity-100',
-														)}
-														aria-hidden
-													/>
-												</span>
-												<span className="mt-0.5 block text-sm leading-snug text-cream/55">
-													{item.blurb}
-												</span>
-											</span>
-										</Link>
-									</li>
-								);
-							})}
-						</ul>
-					</div>
+					<div
+	className="
+		relative overflow-hidden
+		border-b border-white/[0.08]
+		bg-white/[0.035]
+		p-3
+		shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_20px_60px_rgba(0,0,0,0.25)]
+		backdrop-blur-2xl
+		backdrop-saturate-150
+		lg:border-b-0
+		lg:border-r
+	"
+>
+	{/* Ambient glass glow */}
+	<div
+		className="
+			pointer-events-none
+			absolute -left-20 -top-20
+			h-40 w-40
+			rounded-full
+			bg-cyan-bright/[0.08]
+			blur-3xl
+		"
+	/>
+
+	<div
+		className="
+			pointer-events-none
+			absolute -bottom-24 -right-20
+			h-48 w-48
+			rounded-full
+			bg-ultramarine/[0.10]
+			blur-3xl
+		"
+	/>
+
+	{/* Content */}
+	<div className="relative z-10">
+		<p className="px-3 pb-2 pt-1 font-mono-tech text-[11px] font-medium uppercase tracking-[0.18em] text-cyan-bright/80">
+			Company
+		</p>
+
+		<ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1">
+			{MEGA_ITEMS.map(item => {
+				const isActive = item.key === activeKey;
+
+				return (
+					<li key={item.key}>
+						<Link
+							href={item.to}
+							onMouseEnter={() => onActiveChange(item.key)}
+							onFocus={() => onActiveChange(item.key)}
+							onClick={onClose}
+							className={cn(
+								'group relative flex items-start gap-3 rounded-2xl px-3 py-3',
+								'border border-transparent',
+								'transition-all duration-300 ease-out',
+
+								isActive
+									? [
+											'border-cyan-bright/[0.10]',
+											'bg-white/[0.055]',
+											'shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_8px_30px_rgba(0,0,0,0.18)]',
+										]
+									: [
+											'hover:border-white/[0.06]',
+											'hover:bg-white/[0.025]',
+										],
+							)}
+						>
+							<span
+								className={cn(
+									'mt-1 h-9 w-1 shrink-0 rounded-full',
+									'transition-all duration-300',
+									isActive
+										? 'bg-gradient-to-b from-cyan-bright to-ultramarine shadow-glow-cyan'
+										: 'bg-white/[0.12] group-hover:bg-white/[0.25]',
+								)}
+								aria-hidden
+							/>
+
+							<span className="min-w-0">
+								<span
+									className={cn(
+										'flex items-center gap-1.5 font-display text-base font-semibold',
+										'transition-colors duration-300',
+										isActive
+											? 'text-cyan-bright'
+											: 'text-cream group-hover:text-white',
+									)}
+								>
+									{item.label}
+
+									<ArrowUpRight
+										className={cn(
+											'h-3.5 w-3.5',
+											'transition-all duration-300',
+											isActive
+												? 'translate-x-0 text-cyan-bright opacity-100'
+												: '-translate-x-1 text-cream/40 opacity-0 group-hover:translate-x-0 group-hover:opacity-100',
+										)}
+										aria-hidden
+									/>
+								</span>
+
+								<span className="mt-0.5 block text-sm leading-snug text-cream/55 transition-colors duration-300 group-hover:text-cream/70">
+									{item.blurb}
+								</span>
+							</span>
+						</Link>
+					</li>
+				);
+			})}
+		</ul>
+	</div>
+</div>
 
 					{/* Right preview panel */}
 					<div className="relative hidden min-h-[18rem] bg-mesh-cream lg:block">
