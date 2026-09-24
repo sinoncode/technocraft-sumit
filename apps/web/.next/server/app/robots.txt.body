@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /content-planning
+Disallow: /api/
+
+Sitemap: https://technokraft.com/sitemap.xml

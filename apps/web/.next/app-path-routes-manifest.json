@@ -1,0 +1,22 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/blog/page": "/blog",
+  "/careers/page": "/careers",
+  "/contact/page": "/contact",
+  "/content-planning/page": "/content-planning",
+  "/industries/[slug]/page": "/industries/[slug]",
+  "/industries/page": "/industries",
+  "/insights/page": "/insights",
+  "/page": "/",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/solutions/ai-application-development/page": "/solutions/ai-application-development",
+  "/solutions/ai-data-centre/page": "/solutions/ai-data-centre",
+  "/solutions/cybersecurity/page": "/solutions/cybersecurity",
+  "/solutions/it-staffing/page": "/solutions/it-staffing",
+  "/solutions/page": "/solutions",
+  "/solutions/telecom/page": "/solutions/telecom",
+  "/white-papers/page": "/white-papers"
+}
